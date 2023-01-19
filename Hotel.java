@@ -7,6 +7,8 @@ public class Hotel
     public Hotel (String hotelName, int totalRooms, int floors)
     {
         this.rooms = new Room[totalRooms];
+        this.hotelName = hotelName;
+        this.totalRooms = totalRooms;
         for (int i = 0; i < floors; i++)
         {
             for (int p = 0; p < totalRooms / floors; p++)
@@ -74,7 +76,7 @@ public class Hotel
     }
     public void printRooms()
     {
-        for (int i = o; i < totalRooms; i++)
+        for (int i = 0; i < totalRooms; i++)
         {
             System.out.println(this.room[i]);
         }
