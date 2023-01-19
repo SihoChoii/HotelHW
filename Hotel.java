@@ -72,4 +72,11 @@ public class Hotel
     {
         return this.hotelName + ": " + this.getOccupantRate() + "% occupied";
     }
+    public void printRooms()
+    {
+        for (int i = o; i < totalRooms; i++)
+        {
+            System.out.println(this.room[i]);
+        }
+    }
 }
