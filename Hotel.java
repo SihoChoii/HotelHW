@@ -1,5 +1,3 @@
-import Room;
-
 public class Hotel
 {
     private String hotelName;
@@ -40,7 +38,7 @@ public class Hotel
         int occupiedNumber = 0;
         for (int i = 0; i < totalRooms; i++)
         {
-            if (this.rooms[i].getOccupantName == null)
+            if (this.rooms[i].getOccupantName() == null)
             {
                 occupiedNumber++;
             }
@@ -55,10 +53,23 @@ public class Hotel
     {
         for (int i = 0; i < this.totalRooms; i++)
         {
-            if (this.rooms[i].getOccupantName() == null && this.rooms[i].getRoomType == roomType)
+            if (this.rooms[i].getOccupantName() == null && this.rooms[i].getRoomType() == roomType)
             {
                 this.rooms[i].setOccupant(renterName, daysStay);
+                return true;
             }
         }
+        return false;
+    }
+    public void advanceDay()
+    {
+        for (int i = 0; i < this.totalRooms; i++)
+        {
+            this.rooms[i].advanceDay();
+        }
+    }
+    public String toString()
+    {
+        return this.hotelName + ": " + this.getOccupantRate() + "% occupied";
     }
 }

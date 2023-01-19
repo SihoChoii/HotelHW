@@ -45,7 +45,7 @@ public class Room
         {
             occupantTempName = "free";
         }
-        return  "Room " + this.roomNumber + ": " + this.roomType + " - rented to " + this.occupantTempName;
+        return  "Room " + this.roomNumber + ": " + this.roomType + " - rented to " + occupantTempName;
     }
     public int getRoomNumber()
     {
